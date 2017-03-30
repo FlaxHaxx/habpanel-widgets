@@ -2,6 +2,6 @@ language: node_js
 sudo: false
 before_script:
   - npm install -g jsonlint
-script: jsonlint -q **/*.json
+script: jsonlint -q **/*.widget.json
 
 
