@@ -1,0 +1,12 @@
+{
+    "template": "<h4>Sonos</h4>\n\n<div class=\"btn-group\">\n  <label class=\"btn btn-lg btn-default\" ng-click=\"sendCmd(config.udn + '_control', 'REV')\">\n    <li class=\"glyphicon glyphicon-step-backward\"></li>\n  </label>\n  <label class=\"btn btn-lg btn-default\" ng-if=\"itemValue(config.udn + '_control')=='PAUSE'\" ng-click=\"sendCmd(config.udn + '_control', 'PLAY')\">\n    <li class=\"glyphicon glyphicon-play\"></li>\n  </label>\n  <label class=\"btn btn-lg btn-default\" ng-if=\"itemValue(config.udn + '_control')=='PLAY'\" ng-click=\"sendCmd(config.udn + '_control', 'PAUSE')\">\n    <li class=\"glyphicon glyphicon-pause\"></li>\n  </label>\n  <label class=\"btn btn-lg btn-default\" ng-click=\"sendCmd(config.udn + '_control', 'FWD')\">\n    <li class=\"glyphicon glyphicon-step-forward\"></li>\n  </label>\n</div>\n\n<div class=\"slider-div\" ng-init='volumeModel={\"name\":\"volume\", \"item\":config.udn + \"_volume\", \"floor\":0, \"ceil\":100, \"step\":1, \"hidelabel\":\"true\", \"hidelimits\":\"true\" }'>\n  <widget-slider ng-model=\"volumeModel\"/>\n</div>",
+    "name": "Sonos Controller",
+    "author": "jon.wikman@blitter.se",
+    "settings": [
+        {
+            "type": "string",
+            "id": "udn",
+            "label": "Unique Device Name"
+        }
+    ]
+}
